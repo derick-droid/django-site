@@ -5,4 +5,13 @@ def start_page(request):
     return HttpResponse("hello world!")
 
 def index(request):
-    return render(request, "meetsup/index.html",)
+    meetsup = [
+        {"titles": "The first meet up "},
+        {"titles": "The secong meet up"},
+        
+    ]
+    return render(request, "meetsup/index.html", {
+        "show_meetsup":True,
+        "meetsup":meetsup,
+        
+    })

@@ -9,10 +9,24 @@
     <title>meetsup</title>
 </head>
 <body>
+    <nav>django</nav>
     <p>
         <h1>
             hello world!
         </h1>
+        {% if show_meetsup %}
+        <p>
+            hello we have the following meeting
+        </p>
+       {% for meetsup_item in meetsup %}
+       <p>{{ meetsup_item.titles }}</p>
+       {% endfor %}
+        {% else %}
+        <p>
+            no meetsup
+        </p>
+        {% endif %}
+
     </p>
 </body>
 </html>
